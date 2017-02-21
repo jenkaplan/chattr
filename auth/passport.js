@@ -1,12 +1,12 @@
 const passport = require('passport');
-const models = require('../db/models/index');
+const models = require('../models/index');
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
     done(null, user.id)
   });
 
-  passport.deserialzeUser((id, done) => {
+  passport.deserializeUser((id, done) => {
     models.User.findById(id)
     .then((user) => { done(null, user); })
     .catch((err) => { done(err, null); });

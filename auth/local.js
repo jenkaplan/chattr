@@ -2,14 +2,14 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const init = require('./passport');
-const models = require('../db/models/index');
+const models = require('../models/index');
 const authHelpers = require('../auth/auth-helpers');
 
 const options = {};
 
 init();
 
-passport.user(new LocalStrategy(options, (username, password, done) => {
+passport.use(new LocalStrategy(options, (username, password, done) => {
   models.User.findAll({
     where: {
       username

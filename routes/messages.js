@@ -10,7 +10,7 @@ var authHelpers = require('../auth/auth-helpers');
 
 // authHelpers.loginRequired,
 // route to the the messages page
-router.get('/', function(req, res, next) {
+router.get('/', authHelpers.loginRequired, function(req, res, next) {
   console.log('get function called');
   models.Messages.findAll({}).then(function(messages) {
     res.render('messages/index', {
@@ -23,12 +23,12 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   console.log('post function called');
   models.Messages.create({
-    message: req.body.message
+    message: req.body.message,
+    username: req.user.username
   }).then(function (messages) {
     res.redirect('/messages');
   });
 });
-
 
 // deletes the data when a user clicks delete
 router.post('/:id', function(req, res, next) {

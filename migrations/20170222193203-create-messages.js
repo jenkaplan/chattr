@@ -12,8 +12,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      user_id: {
-        type: Sequelize.INTEGER
+      username: {
+        type: Sequelize.STRING(32),
+        unique: true
       },
       createdAt: {
         allowNull: false,

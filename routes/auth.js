@@ -9,7 +9,7 @@ const authHelpers = require('../auth/auth-helpers');
 const passport = require('../auth/local');
 
 // renders the register page
-router.get('./register', authHelpers.loginRedirect, (req, res) => {
+router.get('/register', authHelpers.loginRedirect, (req, res) => {
   res.render('auth/register');
 });
 

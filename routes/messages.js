@@ -4,14 +4,14 @@ const express = require('express');
 const router = express.Router();
 
 // calls in the database
-var models = require('../db/models/index');
+var models = require('../models/index');
 // calls in auth-helpers file
 var authHelpers = require('../auth/auth-helpers');
 
 // authHelpers.loginRequired,
 // route to the the messages page
 router.get('/', function(req, res, next) {
-  models.Meals.findAll({}).then(function(messages) {
+  models.Messages.findAll({}).then(function(messages) {
     res.render('messages/index', {
       messages: messages
     });

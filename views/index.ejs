@@ -1,16 +1,14 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-    <main>
-      <div class="container">
-        <p>Hello, this is the user profile page!</p>
-        <p><%= user.firstName %></p>
-        <p><%= user.lastName %></p>
-        <p><%= user.email %></p>
-        <a href="/auth/logout">LOG OUT</a>
-      </div>
-    </main>
+    <button type="button">
+      <a href="/auth/register">Register</a>
+    </button>
+    <button>
+      <a href="/auth/login"></a>
+    </button>
     <% include ../partials/footer.ejs %>
   </body>
 </html>

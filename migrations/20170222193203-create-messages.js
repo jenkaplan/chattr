@@ -9,10 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       message: {
+        allowNull: false,
         type: Sequelize.TEXT
       },
       user_id: {
-        type: Sequelize.INTIGER
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

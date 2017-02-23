@@ -1,11 +1,10 @@
 # Chattr Pseudo Code
 1. user creates an account -done
 2. user logs in -done
-3. user posts message
-3. user sees past messages
-3. user sends message
-4. user views other messages
-5. messages past 24 hours are erased
+3. user sees past messages -Thursday
+4. user posts message -Thursday
+6. messages past 24 hours are erased -Friday
+7. hook up websockets -Friday
 
 
 ## Past MVP

@@ -1,14 +1,17 @@
-<% include partials/head.ejs %>
+
+<% include ../partials/head.ejs %>
   <body>
-    <% include partials/header.ejs %>
+    <% include ../partials/header.ejs %>
     <main>
       <div class="container">
-        <p>Hello, this is the main index page!</p>
-        <p><a href="/auth/register">click here to register</a></p>
-        <p><a href="/auth/login">click here to log in</a></p>
-        <p><a href="/auth/logout">click here to logout</a></p>
+        <p>Hello, this is the user profile page!</p>
+        <p><%= user.firstName %></p>
+        <p><%= user.lastName %></p>
+        <p><%= user.email %></p>
+        <a href="/auth/logout">LOG OUT</a>
       </div>
     </main>
-    <% include partials/footer.ejs %>
+    <% include ../partials/footer.ejs %>
   </body>
 </html>
+

@@ -11,6 +11,7 @@ var authHelpers = require('../auth/auth-helpers');
 // authHelpers.loginRequired,
 // route to the the messages page
 router.get('/', function(req, res, next) {
+  console.log('get function called');
   models.Messages.findAll({}).then(function(messages) {
     res.render('messages/index', {
       messages: messages
@@ -18,17 +19,19 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// posts data from the message form into the message table
+// // posts data from the message form into the message table
 router.post('/', function(req, res, next) {
+  console.log('post function called');
   models.Messages.create({
     message: req.body.message
   }).then(function (messages) {
-    res.redirect('/messages')
+    res.redirect('/messages');
   });
 });
 
+
 // deletes the data when a user clicks delete
-router.delete('/:id', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
   models.Messages.destroy({
     where: {
       id: req.params.id

@@ -1,5 +1,9 @@
 body {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  /*align-items: stretch;*/
+  align-items:
 }
 
 header {
@@ -22,4 +26,11 @@ footer {
 
 a {
   color: #00B7FF;
+}
+
+.vortxt {
+  /*font-family: 'Press Start 2P', cursive;*/
+  /*font-family: 'Nosifer', cursive;*/
+  font-family: 'Bangers', cursive;
+  /*font-family: 'Audiowide', cursive;*/
 }

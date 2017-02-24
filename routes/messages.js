@@ -21,17 +21,7 @@ router.get('/', authHelpers.loginRequired, function(req, res, next) {
 });
 
 // posts data from the message form into the message table
-// router.post('/', function(req, res, next) {
-//   models.Messages.create({
-//     message: req.body.message,
-//     username: req.user.username
-//   }).then(function (messages) {
-//     res.redirect('/messages');
-//   });
-// });
-
 router.post('/', function(req, res, next) {
-  console.log('post function called');
   models.Messages.create({
     message: req.body.message,
     username: req.user.username
@@ -61,8 +51,8 @@ router.post('/:id', function(req, res, next) {
   });
 });
 
-// function autoDelete(req, res, next) {
-//   models.sequelize.query('DELETE "Message".* FROM "Messages" WHERE "createdAt" < Now()')
-// }
+function autoDelete(req, res, next) {
+  models.sequelize.query('DELETE "Message".* FROM "Messages" WHERE "createdAt" < Now()')
+};
 
 module.exports = router;

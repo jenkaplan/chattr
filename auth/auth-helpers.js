@@ -25,12 +25,12 @@ function createUser(req, res) {
     lastName: req.body.lastName,
     email: req.body.email
   }).then(() => {
-    res.redirect('/');
+    res.redirect('/messages');
   });
 }
 
 function loginRequired(req, res, next) {
-  if (!req.user) return res.status(401).json({ status: 'Please log in'});
+  if (!req.user) return res.redirect('/auth/login');
 
   return next();
 }

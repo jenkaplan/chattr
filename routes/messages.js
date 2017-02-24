@@ -2,6 +2,8 @@
 const express = require('express');
 // requires the Express router node
 const router = express.Router();
+// const http = require('http').Server(express);
+// const io = require('socket.io');
 
 // calls in the database
 var models = require('../models/index');
@@ -11,7 +13,6 @@ var authHelpers = require('../auth/auth-helpers');
 // authHelpers.loginRequired,
 // route to the the messages page
 router.get('/', authHelpers.loginRequired, function(req, res, next) {
-  console.log('get function called');
   models.Messages.findAll({}).then(function(messages) {
     res.render('messages/index', {
       messages: messages
@@ -19,7 +20,16 @@ router.get('/', authHelpers.loginRequired, function(req, res, next) {
   });
 });
 
-// // posts data from the message form into the message table
+// posts data from the message form into the message table
+// router.post('/', function(req, res, next) {
+//   models.Messages.create({
+//     message: req.body.message,
+//     username: req.user.username
+//   }).then(function (messages) {
+//     res.redirect('/messages');
+//   });
+// });
+
 router.post('/', function(req, res, next) {
   console.log('post function called');
   models.Messages.create({
@@ -29,6 +39,16 @@ router.post('/', function(req, res, next) {
     res.redirect('/messages');
   });
 });
+
+// io.on('connection', function(socket){
+//   socket.on('chat message', function(msg){
+//     io.emit('chat message', msg);
+//   });
+// });
+
+// http.listen(3000, function(){
+//   console.log('listening on *:3000');
+// });
 
 // deletes the data when a user clicks delete
 router.post('/:id', function(req, res, next) {
@@ -40,5 +60,9 @@ router.post('/:id', function(req, res, next) {
     res.redirect('/messages');
   });
 });
+
+// function autoDelete(req, res, next) {
+//   models.sequelize.query('DELETE "Message".* FROM "Messages" WHERE "createdAt" < Now()')
+// }
 
 module.exports = router;

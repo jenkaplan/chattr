@@ -13,8 +13,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       username: {
-        type: Sequelize.STRING(32),
-        unique: true
+        type: Sequelize.STRING(32)
       },
       createdAt: {
         allowNull: false,

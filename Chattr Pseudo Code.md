@@ -12,3 +12,11 @@
 - user can select who they message with
 - user can delete a message -done
 - user can edit only their message
+
+### Socket.io with Database
+- on page load, render all the data from the database
+- when data is entered use socket.io to render that data and push it into the database
+
+### Auto-Delete
+- Use Moment end of day feature to autodelete
+- 

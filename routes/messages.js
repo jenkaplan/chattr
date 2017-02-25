@@ -2,8 +2,8 @@
 const express = require('express');
 // requires the Express router node
 const router = express.Router();
-// const http = require('http').Server(express);
-// const io = require('socket.io');
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 // calls in the database
 var models = require('../models/index');
@@ -30,15 +30,15 @@ router.post('/', function(req, res, next) {
   });
 });
 
-// io.on('connection', function(socket){
-//   socket.on('chat message', function(msg){
-//     io.emit('chat message', msg);
-//   });
-// });
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
+});
 
-// http.listen(3000, function(){
-//   console.log('listening on *:3000');
-// });
+http.listen(3000, function(){
+  console.log('listening on *:3000');
+});
 
 // deletes the data when a user clicks delete
 // router.post('/:id', function(req, res, next) {

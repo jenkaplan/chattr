@@ -2,8 +2,6 @@
 const express = require('express');
 // requires the Express router node
 const router = express.Router();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
 
 // calls in the database
 var models = require('../models/index');
@@ -30,26 +28,16 @@ router.post('/', function(req, res, next) {
   });
 });
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+// deletes the data when a user clicks delete
+router.post('/:id', function(req, res, next) {
+  models.Messages.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(messages) {
+    res.redirect('/messages');
   });
 });
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});
-
-// deletes the data when a user clicks delete
-// router.post('/:id', function(req, res, next) {
-//   models.Messages.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then(function(messages) {
-//     res.redirect('/messages');
-//   });
-// });
 
 function autoDelete(req, res, next) {
   models.sequelize.query('DELETE "Message".* FROM "Messages" WHERE "createdAt" < Now()')

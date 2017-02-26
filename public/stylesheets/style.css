@@ -6,13 +6,17 @@ body {
   align-content: stretch;
 }
 
+h1, p, li, ul, a, label {
+  font-family: 'Open Sans', sans-serif;
+}
+
 header {
-  background-color: teal;
+  background-color: #58B89D;
   color: white;
 }
 
 header .container h1 {
-  font-size: 36px;
+  font-size: 30px;
 }
 
 main{
@@ -20,17 +24,15 @@ main{
 }
 
 footer {
-  background-color: teal;
+  background-color: #58B89D;
   color: white;
 }
 
 a {
-  color: #00B7FF;
+  color: #58B89D;
 }
 
 .vortxt {
-  /*font-family: 'Press Start 2P', cursive;*/
-  /*font-family: 'Nosifer', cursive;*/
   font-family: 'Bangers', cursive;
-  /*font-family: 'Audiowide', cursive;*/
+  font-size: 50px;
 }

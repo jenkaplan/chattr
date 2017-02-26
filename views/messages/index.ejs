@@ -4,18 +4,20 @@
   <body>
     <% include ../partials/header.ejs %>
     <main>
+    </br>
       <% messages.forEach(function(message) { %>
         <div class="container">
           <span><%= message.username %>: <%= message.message %></span>
           <form action="<%= '/messages/' + message.id + '?_method=DELETE' %>" method="POST">
-            <input type="submit" value="X" />
+            <input type="submit" value="X" class="btn btn-danger btn-sm glyphicon glyphicon-trash" aria-hidden="true"/>
+            </span>
           </form>
         </div>
+        </br>
       <% }) %>
     <form action="/messages" method="POST" class="form-inline">
       <div class="form-group">
-        <label for="message">Message</label>
-        <input type="text" class="form-control" name="message" placeholder="Type Your Message Here">
+        <input type="text" class="form-control" name="message" placeholder="Your Message">
       </div>
       <button type="submit" class="btn btn-default">Send</button>
     </form>

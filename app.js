@@ -41,9 +41,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   res.sendFile(__dirname + '/routes/messages.js');
 // });
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+// app.get('/', function(req, res){
+//   res.sendFile(__dirname + '/index.html');
+// });
 
 io.on('connection', function(socket){
   socket.on('chat message', function(msg){

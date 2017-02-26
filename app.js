@@ -37,6 +37,10 @@ app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.get('/messages', function(req, res){
+//   res.sendFile(__dirname + '/routes/messages.js');
+// });
+
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });

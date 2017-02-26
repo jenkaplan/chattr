@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   /*align-items: stretch;*/
-  align-items:
+  align-content: stretch;
 }
 
 header {

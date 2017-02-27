@@ -20,6 +20,7 @@ router.get('/', authHelpers.loginRequired, function(req, res, next) {
 
 // posts data from the message form into the message table
 router.post('/', function(req, res, next) {
+  console.log('hit database');
   models.Messages.create({
     message: req.body.message,
     username: req.user.username

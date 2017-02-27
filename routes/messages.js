@@ -29,15 +29,15 @@ router.post('/', function(req, res, next) {
 });
 
 // deletes the data when a user clicks delete
-// router.post('/:id', function(req, res, next) {
-//   models.Messages.destroy({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then(function(messages) {
-//     res.redirect('/messages');
-//   });
-// });
+router.post('/:id', function(req, res, next) {
+  models.Messages.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(messages) {
+    res.redirect('/messages');
+  });
+});
 
 function autoDelete(req, res, next) {
   models.sequelize.query('DELETE "Message".* FROM "Messages" WHERE "createdAt" < Now()')

@@ -19,4 +19,6 @@
 
 ### Auto-Delete
 - Use Moment end of day feature to autodelete
-- 
+
+### Questions about Sockets
+- Socket isn't working on Heroku, Socket is working on localhost, but not sending to the database.

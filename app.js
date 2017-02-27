@@ -32,7 +32,6 @@ http.listen(8080, function(){
   console.log('listening on *:8080');
 });
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

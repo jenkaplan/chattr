@@ -10,7 +10,7 @@ h1, p, li, ul, a, label {
 }
 
 header {
-  background-color: #58B89D;
+  background-color: #8C86A2;
   color: white;
 }
 
@@ -23,7 +23,7 @@ main{
 }
 
 footer {
-  background-color: #58B89D;
+  background-color: #8C86A2;
   color: white;
 }
 
@@ -40,8 +40,24 @@ li {
   list-style-type: none;
 }
 
+.logo {
+  background: url('../images/vortext.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+}
+
 /*ul {
   display: flex;
   flex-direction: column-reverse;
+}*/
+
+.box {
+  padding: 2%;
 }
-*/
+
+.home-box {
+  padding: 5%;
+}

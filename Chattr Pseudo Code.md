@@ -22,3 +22,5 @@
 
 ### Questions about Sockets
 - Socket isn't working on Heroku, Socket is working on localhost, but not sending to the database.
+
+- why did my delete button break?

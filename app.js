@@ -15,8 +15,8 @@ const app = express();
 
 require('dotenv').config();
 
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 // app.get('/', function(req, res){
 //   res.sendFile(__dirname + '/index.html');

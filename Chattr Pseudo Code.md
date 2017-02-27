@@ -23,4 +23,8 @@
 ### Questions about Sockets
 - Socket isn't working on Heroku, Socket is working on localhost, but not sending to the database.
 
-- why did my delete button break?
+- I tried to run `heroku run printenv` to test what ports I'm running, but encountered another error. How come I got an error message when I ran 'heroku run printenv'?  http://stackoverflow.com/questions/34498819/socket-io-woks-with-localhost-but-not-on-heroku-server
+
+- How come the app runs on localhost:3000 but the socket and the database do not work? It responds with a 404.
+
+- Could it be a port binding issue? Don't really understand port binding.

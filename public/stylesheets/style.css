@@ -49,10 +49,10 @@ li {
   width: 100%;
 }
 
-/*ul {
+ul {
   display: flex;
   flex-direction: column-reverse;
-}*/
+}
 
 .box {
   padding: 2%;

@@ -68,7 +68,6 @@ ul {
 }
 
 .messages-scroll {
- /* width: 15%;*/
   height: 25vw;
   overflow: scroll;
 }

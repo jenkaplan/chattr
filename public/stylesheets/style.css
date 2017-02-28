@@ -55,7 +55,7 @@ ul {
 }
 
 .box {
-  padding: 2%;
+  padding: 1%;
 }
 
 .home-box {
@@ -63,6 +63,6 @@ ul {
 }
 
 .messages {
-  max-height: 40vh;
+  height: 40vh;
   overflow-y: scroll;
 }

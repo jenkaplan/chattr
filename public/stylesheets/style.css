@@ -62,7 +62,13 @@ ul {
   padding: 5%;
 }
 
-.messages {
-  height: 40vh;
-  overflow-y: scroll;
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.messages-scroll {
+ /* width: 15%;*/
+  height: 25vw;
+  overflow: scroll;
 }

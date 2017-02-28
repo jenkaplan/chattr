@@ -14,6 +14,19 @@ A chat room that allows anyone to delete a message.
 - CSS
 - Pexels for the homepage image
 
+## Screenshots
+This is the home page.
+![home page](https://i.imgur.com/2HCEpGe.jpg)
+
+This is the register page.
+![homepage](https://i.imgur.com/dOO0wlS.png)
+
+This is the login page.
+![homepage](https://i.imgur.com/UDsZaqe.png)
+
+This is the messages page.
+![messages page](https://i.imgur.com/b9LaFvK.png)
+
 ## Process
 This is my pseudo code with my expected timeframe. 
 

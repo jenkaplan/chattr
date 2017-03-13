@@ -21,3 +21,9 @@ My socket is located in app.js and my database route is located in routes/messag
 - Idea: Follow instructions on https://devcenter.heroku.com/articles/node-websockets and run in the command line: `heroku features:enable http-session-affinity`
 - Result: I knew that if this worked, it would have only fixed the issue in Heroku. I ran that line and it didn't make it work, but it likely fixed a bug I would have encountered in the future.
 
+## How to replicate the error
+1. Download the repo
+2. Run npm install
+3. Run `createdb vortxt_development`
+4. Run `sequelize db:migrate`
+5. Update the config/config.json file to have your username. 

@@ -7,8 +7,6 @@ const router = express.Router();
 var models = require('../models/index');
 // calls in auth-helpers file
 var authHelpers = require('../auth/auth-helpers');
-// calls in socket
-const io = require('socket.io');
 
 // route to the the messages page
 router.get('/', authHelpers.loginRequired, function(req, res, next) {

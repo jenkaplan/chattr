@@ -29,3 +29,4 @@ My socket is located in app.js and my database route is located in routes/messag
 3. Run `createdb vortxt_development`
 4. Run `sequelize db:migrate`
 5. Update the config/config.json file to have your username. 
+6. Go to Chrome and run localhost:8080.

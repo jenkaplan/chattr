@@ -28,7 +28,7 @@ io.on('connection', function(socket){
   });
 });
 
-socket.on('error', function (error) {
+io.on('error', function (error) {
   debug('error: ' + error)
 })
 

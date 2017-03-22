@@ -28,6 +28,15 @@ io.on('connection', function(socket){
   });
 });
 
+io.on('chat message', function () {
+  models.Messages.create({
+    message: req.body.message,
+    username: req.user.username
+  }).then(function (messages) {
+    res.redirect('/messages');
+  });
+});
+
 io.on('error', function (error) {
   debug('error: ' + error)
 })

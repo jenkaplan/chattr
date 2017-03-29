@@ -18,6 +18,7 @@ require('dotenv').config();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+// // this is what you need if there isn't a full stack app
 // app.get('/', function(req, res){
 //   res.sendFile(__dirname + '/index.html');
 // });
@@ -28,14 +29,15 @@ io.on('connection', function(socket){
   });
 });
 
-io.on('chat message', function () {
-  models.Messages.create({
-    message: req.body.message,
-    username: req.user.username
-  }).then(function (messages) {
-    res.redirect('/messages');
-  });
-});
+// didn't work, but possibly on the right track
+// io.on('chat message', function () {
+//   models.Messages.create({
+//     message: req.body.message,
+//     username: req.user.username
+//   }).then(function (messages) {
+//     res.redirect('/messages');
+//   });
+// });
 
 io.on('error', function (error) {
   debug('error: ' + error)

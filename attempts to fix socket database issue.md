@@ -2,7 +2,7 @@
 
 
 ## Summary of issue
-I am trying to use Socket.io and Sequelize to create a chat app. Socket.io will handle the socket to allow for immediate messaging. Sequelize will handle storing the messages so when you refresh the screen you still have your messages. 
+I am trying to use Socket.io and Sequelize to create a chat app. Socket.io will handle the socket to allow for instant messaging. Sequelize will handle storing the messages so when you refresh the screen you still have your messages. 
 
 What is happening is that on localhost my socket works, but it does not send the messages to the database. When I put it onto Heroku, my database worked, but it does not use the sockets.
 

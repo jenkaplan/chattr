@@ -34,8 +34,9 @@ This is my pseudo code with my expected timeframe.
 2. user logs in -Wednesday -done
 3. user sees past messages -Thursday -done
 4. user posts message -Thursday -done
-5. messages past 24 hours are erased -Friday
-6. hook up websockets -Friday
+5. hook up websockets -Friday -in progress
+6. messages past 24 hours are erased -Friday -not started
+
 
 ## MVP
 Create a full stack app that allows anyone to create an account and users can chat with each other and erases all messages after 24 hours.

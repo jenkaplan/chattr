@@ -3,8 +3,8 @@
 2. user logs in -Wednesday -done
 3. user sees past messages -Thursday -done
 4. user posts message -Thursday -done
-5. hook up websockets -Friday
-6. messages past 24 hours are erased -Friday
+5. hook up websockets -Friday -in progress
+6. messages past 24 hours are erased -Friday -not started
 
 ## Past MVP
 - look into Twilio api

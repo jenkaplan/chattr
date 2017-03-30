@@ -32,7 +32,7 @@ const models = require('./models/index');
 //   });
 // });
 
-// didn't work, but possibly on the right track
+// // didn't work, but possibly on the right track
 // io.on('chat message', function () {
 //   models.Messages.create({
 //     message: req.body.message,

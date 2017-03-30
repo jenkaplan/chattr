@@ -21,6 +21,27 @@ My socket is located in app.js and my database route is located in routes/messag
 - Idea: Follow instructions on https://devcenter.heroku.com/articles/node-websockets and run in the command line: `heroku features:enable http-session-affinity`
 - Result: I knew that if this worked, it would have only fixed the issue in Heroku. I ran that line and it didn't make it work, but it likely fixed a bug I would have encountered in the future.
 
+- Idea: get the message to be added to the database within App.js
+- Result: This is the current error message I am getting:
+``` 
+Executing (default): INSERT INTO "Messages" ("id","createdAt","updatedAt") VALUES (DEFAULT,'2017-03-30 04:20:30.667 +00:00','2017-03-30 04:20:30.667 +00:00') RETURNING *;
+Unhandled rejection SequelizeBaseError: null value in column "message" violates not-null constraint
+    at Query.formatError (/Users/Jen/generalassembly/vortxt/node_modules/sequelize/lib/dialects/postgres/query.js:357:14)
+    at Query.<anonymous> (/Users/Jen/generalassembly/vortxt/node_modules/sequelize/lib/dialects/postgres/query.js:88:19)
+    at emitOne (events.js:96:13)
+    at Query.emit (events.js:189:7)
+    at Query.handleError (/Users/Jen/generalassembly/vortxt/node_modules/pg/lib/query.js:131:8)
+    at Connection.<anonymous> (/Users/Jen/generalassembly/vortxt/node_modules/pg/lib/client.js:180:26)
+    at emitOne (events.js:96:13)
+    at Connection.emit (events.js:189:7)
+    at Socket.<anonymous> (/Users/Jen/generalassembly/vortxt/node_modules/pg/lib/connection.js:121:12)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:189:7)
+    at readableAddChunk (_stream_readable.js:176:18)
+    at Socket.Readable.push (_stream_readable.js:134:10)
+    at TCP.onread (net.js:551:20)
+```
+
 - Idea: Tried to add the socket to routes/messages.js.
 - Result: Everything I did created a lot of errors.
 ## How to replicate the error

@@ -21,6 +21,9 @@ My socket is located in app.js and my database route is located in routes/messag
 - Idea: Follow instructions on https://devcenter.heroku.com/articles/node-websockets and run in the command line: `heroku features:enable http-session-affinity`
 - Result: I knew that if this worked, it would have only fixed the issue in Heroku. I ran that line and it didn't make it work, but it likely fixed a bug I would have encountered in the future.
 
+- Idea: Tried to add the socket to routes/messages.js.
+- Result: Everything I did created a lot of errors.
+
 - Idea: get the message to be added to the database within App.js
 - Result: This is the current error message I am getting:
 ``` 
@@ -42,8 +45,6 @@ Unhandled rejection SequelizeBaseError: null value in column "message" violates 
     at TCP.onread (net.js:551:20)
 ```
 
-- Idea: Tried to add the socket to routes/messages.js.
-- Result: Everything I did created a lot of errors.
 ## How to replicate the error
 1. Download the repo
 2. Run npm install

@@ -37,9 +37,9 @@ const models = require('./models/index');
 //   models.Messages.create({
 //     message: req.body.message,
 //     username: req.user.username
-//   }).then(function (messages) {
-//     res.redirect('/messages');
-//   });
+//   })//.then(function (messages) {
+//     //res.redirect('/messages');
+//   //});
 // });
 
 // Listen for new client connections.
@@ -47,13 +47,13 @@ io.on('connection', function(socket) {
 
   // Listen for the client to send a _"chat message"_ message.
   socket.on('chat message', function(data) {
+    console.log(data)
 
     // Store the data in the database.
     models.Messages.create({
       message  : data.message,
       username : data.username
     });
-
   });
 });
 

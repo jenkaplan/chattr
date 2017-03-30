@@ -4,9 +4,9 @@ const express = require('express');
 const router = express.Router();
 
 // calls in the database
-var models = require('../models/index');
+const models = require('../models/index');
 // calls in auth-helpers file
-var authHelpers = require('../auth/auth-helpers');
+const authHelpers = require('../auth/auth-helpers');
 
 // route to the the messages page
 router.get('/', authHelpers.loginRequired, function(req, res, next) {
@@ -18,14 +18,14 @@ router.get('/', authHelpers.loginRequired, function(req, res, next) {
 });
 
 // posts data from the message form into the message table
-router.post('/', function(req, res, next) {
-  models.Messages.create({
-    message: req.body.message,
-    username: req.user.username
-  }).then(function (messages) {
-    res.redirect('/messages');
-  });
-});
+// router.post('/', function(req, res, next) {
+//   models.Messages.create({
+//     message: req.body.message,
+//     username: req.user.username
+//   }).then(function (messages) {
+//     res.redirect('/messages');
+//   });
+// });
 
 // deletes the data when a user clicks delete
 router.post('/:id', function(req, res, next) {

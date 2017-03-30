@@ -18,16 +18,19 @@ require('dotenv').config();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+// calls in the database
+const models = require('./models/index');
+
 // // this is what you need if there isn't a full stack app
 // app.get('/', function(req, res){
 //   res.sendFile(__dirname + '/index.html');
 // });
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
-  });
-});
+// io.on('connection', function(socket){
+//   socket.on('chat message', function(msg){
+//     io.emit('chat message', msg);
+//   });
+// });
 
 // didn't work, but possibly on the right track
 // io.on('chat message', function () {
@@ -38,6 +41,21 @@ io.on('connection', function(socket){
 //     res.redirect('/messages');
 //   });
 // });
+
+// Listen for new client connections.
+io.on('connection', function(socket) {
+
+  // Listen for the client to send a _"chat message"_ message.
+  socket.on('chat message', function(data) {
+
+    // Store the data in the database.
+    models.Messages.create({
+      message  : data.message,
+      username : data.username
+    });
+
+  });
+});
 
 io.on('error', function (error) {
   debug('error: ' + error)

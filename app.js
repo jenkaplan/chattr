@@ -44,6 +44,7 @@ const models = require('./models/index');
 
 // Listen for new client connections.
 io.on('connection', function(socket) {
+  // console.log('this is triggered')
 
   // Listen for the client to send a _"chat message"_ message.
   socket.on('chat message', function(data) {

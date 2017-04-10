@@ -38,6 +38,7 @@ router.post('/:id', function(req, res, next) {
   });
 });
 
+// this function does not work
 function autoDelete(req, res, next) {
   models.sequelize.query('DELETE "Message".* FROM "Messages" WHERE "createdAt" < Now()')
 };

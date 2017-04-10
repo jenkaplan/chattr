@@ -45,6 +45,9 @@ Unhandled rejection SequelizeBaseError: null value in column "message" violates 
     at TCP.onread (net.js:551:20)
 ```
 
+- Idea: delete the not null from the messages database
+- Result: It sends the data to the database as an empty string and prints a colon.
+
 ## How to replicate the error
 1. Download the repo
 2. Run npm install

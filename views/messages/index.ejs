@@ -5,9 +5,9 @@
     <% include ../partials/header.ejs %>
     <main>
     </br>
-    <form action="" class="form-inline">
+    <form action="" id="msgForm" class="form-inline">
       <div class="form-group">
-        <input id="m" autocomplete="off" type="text" class="form-control" name="message" placeholder="Your Message" />
+        <input id="msg" autocomplete="off" type="text" class="form-control" name="message" placeholder="Your Message" />
       </div>
       <button type="submit" class="btn btn-default">Send</button>
     </form>
@@ -41,9 +41,9 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
-      $('form').submit(function(){
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
+      $('#msgForm').submit(function(){
+        socket.emit('chat message', {"message":$('#msg').val(), "username": "passuserhere"});
+        $('#msg').val('');
         return false;
       });
       socket.on('chat message', function(msg){
